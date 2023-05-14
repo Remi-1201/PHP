@@ -288,3 +288,95 @@ print_r($array);
 //             [address] => Tokyo
 //         )
 // )
+
+// rsort関数 ========================
+$numbers = array(4, 6, 2, 22, 11);
+rsort($numbers);
+
+print_r($numbers);
+// Array
+// (
+//     [0] => 22
+//     [1] => 11
+//     [2] => 6
+//     [3] => 4
+//     [4] => 2
+// )
+
+// ksort関数 ========================
+$age = array(
+  'Peter' => '35',
+  'Ben'   => '37',
+  'Joe'   =>'43',
+);
+ksort($age);
+
+print_r($age);
+// Array
+// (
+//     [Ben]   => 37
+//     [Joe]   => 43
+//     [Peter] => 35
+// )
+
+// array_map関数 ========================
+array_map('関数', 配列);
+function myfunction($n)
+{
+    return($n * 2);
+}
+$array = array(1, 2, 3, 4, 5);
+$mapped = array_map('myfunction', $array);
+
+print_r($mapped);
+// Array
+// (
+//     [0] => 2
+//     [1] => 4
+//     [2] => 6
+//     [3] => 8
+//     [4] => 10
+// )
+
+// 配列の操作と戻り値 ========================
+$numbers = array(4, 6, 2, 22, 11);
+
+// 元の配列を変更する関数 ========================
+sort($numbers);
+print_r($numbers);
+// Array
+// (
+//     [2] => 2
+//     [0] => 4
+//     [1] => 6
+//     [4] => 11
+//     [3] => 22
+// )
+
+// 元の配列を変更しない関数 ========================
+function myfunction($n)
+{
+    return($n * $n);
+}
+
+$array = array(1, 2, 3, 4, 5);
+$mapped = array_map('myfunction', $array);
+
+print_r($array);
+print_r($mapped);
+// Array
+// (
+//     [0] => 1
+//     [1] => 2
+//     [2] => 3
+//     [3] => 4
+//     [4] => 5
+// )
+// Array
+// (
+//     [0] => 1
+//     [1] => 4
+//     [2] => 9
+//     [3] => 16
+//     [4] => 25
+// )
